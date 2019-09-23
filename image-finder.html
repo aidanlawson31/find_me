@@ -13,15 +13,25 @@
     </head>
     <body>
         <h1>Find me a image of</h1>
-        <input type="text" id="myText" value="Some text...">
-        <button id="button">Search Images</button>
+        <input type="text" placeholder="Type something..." id="myInput">
+        <button type="button" onclick="renderItem();">Get Value</button>
+
         <script>
-            
+          function renderItem() {
+            var inputVal = document.getElementById("myInput").value;
+
+            fetch(`https://source.unsplash.com/1000x1000/\?${inputVal}`)
+              .then(data => {
+                console.log(data);
+              })
+              .catch(err => {
+                console.log('Error happened during fetching!', err);
+              })
+          }
+          // for(let i=0;i<numItemsToGenerate;i++){
+          //   renderItem();
+          // }
+
         </script>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="" async defer></script>
     </body>
 </html>
