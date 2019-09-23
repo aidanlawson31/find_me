@@ -12,26 +12,20 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>Find me a image of</h1>
+        <h1>Find me an image of</h1>
         <input type="text" placeholder="Type something..." id="myInput">
         <button type="button" onclick="renderItem();">Get Value</button>
+        <img id="imgResponse" src="" alt="">
 
         <script>
-          function renderItem() {
+          async function renderItem() {
             var inputVal = document.getElementById("myInput").value;
 
-            fetch(`https://source.unsplash.com/1000x1000/\?${inputVal}`)
-              .then(data => {
-                console.log(data);
-              })
-              .catch(err => {
-                console.log('Error happened during fetching!', err);
-              })
+            let res = await fetch(`https://source.unsplash.com/1000x1000/\?${inputVal}`);
+            console.log(res);
+            document.getElementById("imgResponse").src = res.url;
+            document.getElementById("imgResponse").setAttribute("alt", inputVal);
           }
-          // for(let i=0;i<numItemsToGenerate;i++){
-          //   renderItem();
-          // }
-
         </script>
     </body>
 </html>
