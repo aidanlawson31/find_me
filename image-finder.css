@@ -1,0 +1,77 @@
+ @media (min-width: 1025px) {
+   #imgResponse {
+     max-width: 1000px;
+     max-height: 1000px;
+   }
+
+   .imageBox {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+   }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #imgResponse {
+    max-width: 650px;
+    max-height: 650px;
+  }
+
+  .imageBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+  #imgResponse {
+    max-width: 350px;
+    max-height: 350px;
+  }
+
+  .imageBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formInput {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  max-width: 350px;
+  max-height: 350px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15pt;
+}
+
+input[type=button] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
