@@ -6,20 +6,21 @@
         <title>Find Me</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="image-finder.css">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1 style="text-align: center;">Find me an image of</h1>
+        <h1>Find me an image of</h1>
+        <link rel="" href="/css/master.css">
         <div class="form">
           <div class="text">
             <input type="text" placeholder="Type something..." id="myInput">
           </div>
           <div class="formInput">
-            <button type="button" onclick="renderPhotos();">Search</button>
+            <button id="searchBtn" type="button" onclick="renderPhotos();">Search</button>
             <button type="button">
             <a id="downloadLink" href="" target="_blank">Save Photo</a>
-           </button>
+            </button>
           </div>
-
         </div>
         <div class="imageBox">
           <img id="imgResponse" src="" alt="">
