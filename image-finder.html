@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Find Me</title>
-        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="image-finder.css">
     </head>
     <body>
-        <h1>Find me an image of</h1>
-        <input type="text" placeholder="Type something..." id="myInput">
-        <button type="button" onclick="renderItem();">Get Value</button>
-        <img id="imgResponse" src="" alt="">
-
+        <h1 style="text-align: center;">Find me an image of</h1>
+        <div class="form">
+          <div class="text">
+            <input type="text" placeholder="Type something..." id="myInput">
+          </div>
+          <div class="formInput">
+            <button type="button" onclick="renderItem();">Search</button>
+          </div>
+        </div>
+        <div class="imageBox">
+          <img id="imgResponse" src="" alt="">
+        </div>
         <script>
           async function renderItem() {
             var inputVal = document.getElementById("myInput").value;
 
             let res = await fetch(`https://source.unsplash.com/1000x1000/\?${inputVal}`);
-            console.log(res);
             document.getElementById("imgResponse").src = res.url;
             document.getElementById("imgResponse").setAttribute("alt", inputVal);
           }
