@@ -9,10 +9,13 @@ function renderPhotos() {
       return data.json();
     })
     .then((data) => {
-      console.log(data.results);
+      data.results.forEach(photo => {
+        let altText = photo.alt_description;
+        let returnedPhoto = photo.urls.regular;
+
+        document.getElementById("imgResponse").src = returnedPhoto;
+        document.getElementById("imgResponse").alt = altText;
+      })
     })
     .catch(error => console.log(error))
-
-  // document.getElementById("imgResponse").src = res.url;
-  document.getElementById("imgResponse").setAttribute("alt", query);
 }
