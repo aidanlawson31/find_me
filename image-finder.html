@@ -14,20 +14,12 @@
             <input type="text" placeholder="Type something..." id="myInput">
           </div>
           <div class="formInput">
-            <button type="button" onclick="renderItem();">Search</button>
+            <button type="button" onclick="renderPhotos();">Search</button>
           </div>
         </div>
         <div class="imageBox">
           <img id="imgResponse" src="" alt="">
         </div>
-        <script>
-          async function renderItem() {
-            var inputVal = document.getElementById("myInput").value;
-
-            let res = await fetch(`https://source.unsplash.com/1000x1000/\?${inputVal}`);
-            document.getElementById("imgResponse").src = res.url;
-            document.getElementById("imgResponse").setAttribute("alt", inputVal);
-          }
-        </script>
+         <script src="image-finder.js"></script>
     </body>
 </html>
